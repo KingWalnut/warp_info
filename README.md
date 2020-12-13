@@ -28,10 +28,35 @@ USAGE:
 * You can change the item names, if you do this make sure to change the names in the main_s.lua.
 * You can disable the telegram functionality if you comment out or remove it, this will result in the user having to write down the reciepe. 
 * The telegram gives a rudimentary way for the user to refer back to a reciepe. (Telegram is sent by the user to themselves.)
+* You can use any item you want and make it intricate like "rare" reciepes only come from graverobbing due to only finding the specific item there etc.
 
 ---------------------------
 
-#
+Removing telegram functionality + changing item names in main_s.lua:
+
+BEFORE: 
+```
+VorpInv.RegisterUsableItem("book1", function(data)
+
+    VorpInv.subItem(data.source, "book1", 1)
+    local Character = VorpCore.getUser(data.source).getUsedCharacter
+    local sender1 = Character.firstname 
+    local sender2 = Character.lastname
+    TriggerClientEvent('warp_info:Vulture', data.source, sender1, sender2)
+end)
+```
+
+AFTER:
+```
+VorpInv.RegisterUsableItem("newitemname", function(data)
+
+    VorpInv.subItem(data.source, "newitemname", 1)
+    TriggerClientEvent('warp_info:Vulture', data.source)
+end)
+```
+* "newitemname" should match whatever item you want to use from your database.
+
+
 *KNOWN ISSUES:*
 
 none
