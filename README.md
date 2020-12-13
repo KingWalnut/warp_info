@@ -5,7 +5,7 @@ Use an item and get a telegram about what it says as well as on screen notificat
 **HOW TO INSTALL:**
 
 ---------------------------
-**You need the resource telegram for this to work.**
+**You need the resource telegram for this to work. If you do not want to use the telegram function, go in the main_c.lua and change telegram = true to telegram = false**
 
 STEP 1) add ensure warp_info into your server.cfg
 
@@ -32,7 +32,7 @@ USAGE:
 
 ---------------------------
 
-Removing telegram functionality + changing item names in main_s.lua:
+Changing item names in main_s.lua:
 
 BEFORE: 
 ```
@@ -51,7 +51,10 @@ AFTER:
 VorpInv.RegisterUsableItem("newitemname", function(data)
 
     VorpInv.subItem(data.source, "newitemname", 1)
-    TriggerClientEvent('warp_info:Vulture', data.source)
+    local Character = VorpCore.getUser(data.source).getUsedCharacter
+    local sender1 = Character.firstname 
+    local sender2 = Character.lastname
+    TriggerClientEvent('warp_info:Vulture', data.source, sender1, sender2)
 end)
 ```
 * "newitemname" should match whatever item you want to use from your database.
