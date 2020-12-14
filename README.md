@@ -26,7 +26,7 @@ USAGE:
 
 * Customize what the item will send to the user via telegram and on screen in the config.lua.
 * You can change the item names, if you do this make sure to change the names in the main_s.lua.
-* You can disable the telegram functionality if you comment out or remove it, this will result in the user having to write down the reciepe. 
+* You can disable the telegram functionality by changing telegram = true to false in the main_s.lua.
 * The telegram gives a rudimentary way for the user to refer back to a reciepe. (Telegram is sent by the user to themselves.)
 * You can use any item you want and make it intricate like "rare" reciepes only come from graverobbing due to only finding the specific item there etc.
 
