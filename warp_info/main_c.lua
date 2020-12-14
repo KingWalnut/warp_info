@@ -1,4 +1,4 @@
-telegram = false
+telegram = true -- change me to false if you don't want to use the telegram function.
 
 
 RegisterNetEvent('warp_info:Vulture')
