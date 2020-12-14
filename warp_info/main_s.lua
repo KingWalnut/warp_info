@@ -7,9 +7,9 @@ end)
 VorpInv = exports.vorp_inventory:vorp_inventoryApi()
 
 
-VorpInv.RegisterUsableItem("book1", function(data)
+VorpInv.RegisterUsableItem("book1", function(data) --change item name here "book1" to "youritemname"
 
-    VorpInv.subItem(data.source, "book1", 1)
+    VorpInv.subItem(data.source, "book1", 1) --change item name here "book1" to "youritemname"
     local Character = VorpCore.getUser(data.source).getUsedCharacter
     local sender1 = Character.firstname 
     local sender2 = Character.lastname
